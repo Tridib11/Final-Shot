@@ -7,6 +7,7 @@ const value={
 console.log(value)
 
 value.name="Rohan"
+value.name="Rohan"
 
 
 

@@ -26,3 +26,8 @@ console.log(changeBool)
 
 console.log("1"+3+3) //133
 console.log(1+2+"3") //33
+
+
+console.log(true) //true
+console.log(+true) //1
+

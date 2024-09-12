@@ -13,3 +13,10 @@ console.log(test)
 let changeTheType=Number(test)
 console.log(changeTheType)
 
+
+
+let bool=true
+console.log(bool)
+
+let changeBool=Number(bool)
+console.log(changeBool)

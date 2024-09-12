@@ -20,3 +20,9 @@ console.log(bool)
 
 let changeBool=Number(bool)
 console.log(changeBool)
+
+
+
+
+console.log("1"+3+3) //133
+console.log(1+2+"3") //33

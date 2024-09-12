@@ -11,7 +11,7 @@ let test="22abc"
 console.log(test)
 
 let changeTheType=Number(test)
-console.log(changeTheType)
+console.log(changeTheType) //NaN
 
 
 

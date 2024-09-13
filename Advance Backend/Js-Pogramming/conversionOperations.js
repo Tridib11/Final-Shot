@@ -47,5 +47,5 @@ console.log("2"===2) //false    strictly checks the type of both the datatype
 
 
 console.log("2">1) //Type conversion occurs
-
+console.log("02">1)
 

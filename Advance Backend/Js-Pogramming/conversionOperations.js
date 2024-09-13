@@ -31,3 +31,10 @@ console.log(1+2+"3") //33
 console.log(true) //true
 console.log(+true) //1
 
+console.log(null>0)
+console.log(null==0)
+console.log(null>=0)
+
+// The reason is that an equality check == and comparisons >=, <=,>,<
+// work differently.
+// Comparisons convert null to a number, treating it as 0. So it gives it as true

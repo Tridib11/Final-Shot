@@ -38,3 +38,8 @@ console.log(null>=0)
 // The reason is that an equality check == and comparisons >=, <=,>,<
 // work differently.
 // Comparisons convert null to a number, treating it as 0. So it gives it as true
+
+
+console.log("2"==2) //type conversion happens in here
+
+console.log("2"===2) // strictly checks the type of both the datatype

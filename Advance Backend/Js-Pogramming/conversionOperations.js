@@ -40,6 +40,12 @@ console.log(null>=0)
 // Comparisons convert null to a number, treating it as 0. So it gives it as true
 
 
-console.log("2"==2) //type conversion happens in here
+console.log("2"==2) // true     type conversion happens in here
 
-console.log("2"===2) // strictly checks the type of both the datatype
+console.log("2"===2) //false    strictly checks the type of both the datatype
+
+
+
+console.log("2">1) //Type conversion occurs
+
+

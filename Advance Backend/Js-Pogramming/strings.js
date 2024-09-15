@@ -1,12 +1,15 @@
-// const name="Rohan"
+// const naam="Rohan"
 // const repoCount=50
 
-// console.log(`My name is ${name} and my Repo count is ${repoCount}`)
-const name=new String("Rohan")
-console.log(name)
-console.log(name.length)
-const newName=name.toLocaleUpperCase()
-console.log(name)
-console.log(newName)
+// console.log(`My naam is ${naam} and my Repo count is ${repoCount}`)
+const naam=new String("Rohan")
+console.log(naam)
+console.log(naam.length)
+const newnaam=naam.toLocaleUpperCase()
+console.log(naam)
+console.log(newnaam)
 
-console.log(name.toUpperCase())
+console.log(naam.toUpperCase())
+
+console.log(naam.charAt(2))
+

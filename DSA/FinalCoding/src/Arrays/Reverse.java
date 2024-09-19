@@ -4,9 +4,13 @@ public class Reverse {
     public static void main(String[] args) {
 
         Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        System.out.println(reverse(n));
+//        int n=sc.nextInt();
+        String s=sc.nextLine();
+        System.out.println(reverse(s));
 
+    }
+    private static String reverse(String s){
+        return new StringBuilder(s).reverse().toString();
     }
 
     private static int reverse(int n){

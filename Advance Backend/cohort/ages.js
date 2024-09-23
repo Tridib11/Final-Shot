@@ -10,3 +10,10 @@ const allUsers=[{
   fName:"Swati",
   gender:"Female"
 }]
+
+
+for(let i=0;i<allUsers.length;i++){
+  if(allUsers[i].gender=="Female"){
+    console.log(allUsers[i].fName)
+  }
+}

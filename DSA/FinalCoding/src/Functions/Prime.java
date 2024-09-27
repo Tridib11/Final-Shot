@@ -2,6 +2,7 @@ package Functions;
 import java.util.*;
 public class Prime {
     public static void main(String[] args) {
+        System.out.println("Prime numbers from 1 to n is ");
         Prime(13);
     }
 

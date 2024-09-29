@@ -25,9 +25,20 @@ function kidneyId(req,res,next){
   }
 }
 
-app.get("/health-checkup",middleWare,kidneyId,(req,res)=>{
+
+function Kidneys(req,res,next){
   
-  res.json({"message": "Your kidneys are fine"})
+  
+
+}
+
+
+app.use(express.json())
+app.get("/health-checkup",(req,res)=>{
+  
+  const kidneys=req.body.kidney
+  const length=kidneys.length
+  res.json({msg:`You have ${length} kidneys`})
 })
 
 app.listen(8000,()=>{

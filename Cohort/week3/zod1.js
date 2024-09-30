@@ -1,11 +1,8 @@
+const express=require("express")
 const zod=require("zod")
-// function validateInput(arr){
-//   const schema=zod.array(zod.number())
-//   const response=schema.safeParse(arr)
-//   console.log(response)
-// }
 
-// validateInput([1,2,3,4,"1"])
+const app=express()
+
 
 function validateInput(arr){
   const schema=zod.object({
@@ -15,9 +12,21 @@ function validateInput(arr){
 
   const response=schema.safeParse(arr)
   console.log(response)
+  return response
 }
+app.use(express.json())
 
-validateInput({
-  email:"tridibghosh12345@gmail.com",
-  password:"123456778"
+
+app.post("/login",async (req,res)=>{
+  console.log(req.body)
+  const response=validateInput(req.body)
+  if(!response.success){
+    res.status(400).json({msg:"Wrong inputs"})
+    return
+  }
+  res.status(200).json({msg:"Success"})
 })
+
+app.listen(3000)
+
+

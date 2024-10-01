@@ -10,5 +10,7 @@ public class testing {
         String d=new String("Rohan");
         System.out.println(c==d);
         System.out.println(c.equals(d));
+
+        System.out.println(new int[]{1,2,3,4});
     }
 }

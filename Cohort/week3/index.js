@@ -25,4 +25,29 @@ const All_USERS=[
 ]
 
 
+function userExists(username,password){
+
+}
+
+
+app.use(express.json())
+
+app.post("/signin",(req,res)=>{
+  const username=req.body.username
+  const password=req.body.password
+  if(!userExists(username,password)){
+    return res.status(403).json({
+      msg:"User doesnot exists"
+    })
+  }
+
+  var token=jwt.sign({username:username},jwtPassword)
+  return res.json({
+    token
+  })
+})
+
+
+
+
 

@@ -26,7 +26,12 @@ const All_USERS=[
 
 
 function userExists(username,password){
-
+  for(let i=0;i<All_USERS.length;i++){
+    if(All_USERS[i].username===username && All_USERS[i].password===password){
+      return true
+    }
+  }
+  return false
 }
 
 
@@ -45,6 +50,11 @@ app.post("/signin",(req,res)=>{
   return res.json({
     token
   })
+})
+
+
+app.listen(8000,()=>{
+  console.log("Server started")
 })
 
 

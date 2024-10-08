@@ -59,14 +59,22 @@ app.get("/users",(req,res)=>{
   try{
     const decoded=jwt.verify(token,jwtPassword)
     const username=decoded.username
-    const remainingUsers=[]
-    for(let i=0;i<All_USERS.length;i++){
-      if(All_USERS[i].username!==username){
-        remainingUsers.push(All_USERS[i].username)
-      }
-    }
-    return res.status(202).json({
-      remainingUsers
+    // const remainingUsers=[]
+    // for(let i=0;i<All_USERS.length;i++){
+    //   if(All_USERS[i].username!==username){
+    //     remainingUsers.push(All_USERS[i].username)
+    //   }
+    // }
+
+
+    return res.json({
+      users:All_USERS.filter((value)=>{
+        if(value.username==username){
+          return false
+        }else{
+          return true
+        }
+      })
     })
   }catch(err){
     return res.status(403).json({

@@ -14,19 +14,15 @@ public class MaxSubArraySUm {
     public static int pairWithMaxSum(List<Integer> arr) {
         // Your code goes here
 
-
-
         int max_sum=arr.get(0);
         int sum=0;
 
         for(int i=0;i<arr.size();i++){
             sum+=arr.get(i);
-            if(sum>max_sum){
-                max_sum=sum;
-            }
-            else if(sum<0){
+            if(sum<0){
                 sum=0;
             }
+            max_sum=Math.max(max_sum,sum);
         }
         return max_sum;
     }

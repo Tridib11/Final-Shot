@@ -9,6 +9,19 @@ function isOldEnough(age) {
   }
 }
 
+
+let count=0;
+function useRequestCountMiddleware(req,res,next){
+    count+=1;
+    if (count>5){
+        return res.status(401).json({
+            msg:"Ip blocked"
+        })
+    }
+    next()
+
+}
+
 function useAgeCheckerMiddleware(req, res, next) {
   const age = req.query.age;
   if (age >= 14) {
@@ -19,9 +32,13 @@ function useAgeCheckerMiddleware(req, res, next) {
     });
   }
 }
-app.get("/ride1", useAgeCheckerMiddleware, (req, res) => {
+
+// app.use(useAgeCheckerMiddleware)
+
+app.get("/ride1", useAgeCheckerMiddleware,useRequestCountMiddleware, (req, res) => {
   res.json({
     msg: "You have successfully ridden the ride 1",
+      count
   });
 });
 

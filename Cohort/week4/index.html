@@ -3,8 +3,15 @@
     function populateDiv(){
       const a=document.getElementById("firstNumber").value
       const b=document.getElementById("secondNumber").value
-      const element=document.getElementById("finalSum")
-      element.innerHTML=parseInt(a)+parseInt(b)
+      fetch("http://localhost:3000/sum?a="+a+"&b="+b)
+            .then((response)=>{             
+              response.text()
+                .then((ans)=>{
+                  console.log(ans)
+                })
+            })
+      // const element=document.getElementById("finalSum")
+      // element.innerHTML=parseInt(a)+parseInt(b)
     }
   </script>
   <body>

@@ -23,11 +23,25 @@ public class CountSort {
         }
 
         //sorting
+
+
+        //aescending
         int j=0;
-        for(int i=0;i<countArr.length;i++){
+        for(int i=0;i<arr.length;i++){
             while(countArr[i]>0){
                 arr[j]=i;
                 j++;
+                countArr[i]--;
+            }
+        }
+
+
+        //Descending
+        int k=0;
+        for(int i=largest;i>0;i--){
+            while(countArr[i]>0){
+                arr[k]=i;
+                k++;
                 countArr[i]--;
             }
         }

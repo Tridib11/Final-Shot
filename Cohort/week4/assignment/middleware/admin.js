@@ -5,7 +5,7 @@ async function adminMiddleware(req, res, next) {
   try {
     const admin=await Admin.findOne({ username, password });
     if(!admin){
-      return res.status(403).json("User doesnot exists")
+      return res.status(403).json("Admin doesnot exists")
     }
     next();
   } catch (err) {

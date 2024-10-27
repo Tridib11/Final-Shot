@@ -7,7 +7,7 @@ async function userMiddleware(req, res, next) {
     const value = await User.findOne({ username, password });
     next();
   } catch (error) {
-    res.status(403).json('User doesnt exists');
+    res.status(403).json("User doesnt exists");
   }
 }
 

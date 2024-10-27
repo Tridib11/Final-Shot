@@ -23,7 +23,7 @@ router.post("/signup", async (req, res) => {
   });
 });
 
-router.get("/courses", userMiddleware, async (req, res) => {
+router.get("/courses", async (req, res) => {
   const courses = await Course.find({});
   return res.status(200).json({
     Courses: courses,
@@ -31,7 +31,7 @@ router.get("/courses", userMiddleware, async (req, res) => {
 });
 
 router.post("/courses/:courseId", userMiddleware, (req, res) => {
-  
+
 });
 
 router.get("/purchasedCourses", userMiddleware, (req, res) => {});

@@ -1,6 +1,6 @@
 const mongoose=require("mongoose")
 require('dotenv').config();
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect("mongodb+srv://admin:admin@cluster0.pcgvjbl.mongodb.net/course-selling-app")
         .then(()=>console.log("Database Connected"))
         .catch((err)=>console.error("Database connection error",err))
 

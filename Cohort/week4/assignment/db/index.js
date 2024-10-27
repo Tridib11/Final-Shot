@@ -6,15 +6,24 @@ mongoose.connect(process.env.MONGODB_URI)
 
 
 const AdminSchema=new mongoose.Schema({
-
+  username:String,
+  password:String
 })
 
 const UserSchema=new mongoose.Schema({
-
+  username:String,
+  password:String,
+  purchasedCourses:[{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'Course'
+  }]
 })
 
 const CourseSchema=new mongoose.Schema({
-
+  tite:String,
+  description:String,
+  imageLink:String,
+  price:Number
 })
 
 const Admin=mongoose.model('Admin',AdminSchema)

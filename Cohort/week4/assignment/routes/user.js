@@ -23,6 +23,8 @@ router.post("/signup", async (req, res) => {
   });
 });
 
+
+
 router.get("/courses", async (req, res) => {
   const courses = await Course.find({});
   return res.status(200).json({

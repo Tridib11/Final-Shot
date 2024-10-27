@@ -1,6 +1,7 @@
+const { JWT_SECRET } = require("../config");
 const { Admin } = require("../db");
 const jwt=require("jsonwebtoken")
-const secret=require("../index")
+
 async function adminMiddleware(req, res, next) {
   // const username = req.headers.username;
   // const password = req.headers.password;
@@ -16,7 +17,7 @@ async function adminMiddleware(req, res, next) {
 
   const token =req.headers.authorization
   const jwtToken = token.split(" ")[1];
-  const decodedValue=jwt.verify(jwtToken,secret)
+  const decodedValue=jwt.verify(jwtToken,JWT_SECRET)
   if(decodedValue.username){
     next()
   }else{

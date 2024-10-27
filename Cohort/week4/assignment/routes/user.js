@@ -30,9 +30,38 @@ router.get("/courses", async (req, res) => {
   });
 });
 
-router.post("/courses/:courseId", userMiddleware, (req, res) => {
+router.post("/courses/:courseId", userMiddleware, async (req, res) => {
+  const courseId = req.params.courseId;
+  const username = req.headers.username;
 
+  try {
+    // Fetch the course details to get both courseId and title
+    const course = await Course.findById(courseId);
+    if (!course) {
+      return res.status(404).json({ message: "Course not found" });
+    }
+
+    // Update the user's purchasedCourses by pushing an object with both courseId and title
+    await User.updateOne(
+      { username },
+      {
+        $push: { purchasedCourses: { courseId: course._id, title: course.title } }
+      }
+    );
+
+    return res.json({
+      message: "Purchase complete"
+    });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      message: "An error occurred",
+      error: err.message
+    });
+  }
 });
+
+
 
 router.get("/purchasedCourses", userMiddleware, (req, res) => {});
 

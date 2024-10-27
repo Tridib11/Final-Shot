@@ -10,17 +10,23 @@ const AdminSchema=new mongoose.Schema({
   password:String
 })
 
-const UserSchema=new mongoose.Schema({
-  username:String,
-  password:String,
-  purchasedCourses:[{
-    type:mongoose.Schema.Types.ObjectId,
-    ref:'Course'
-  }]
-})
+const UserSchema = new mongoose.Schema({
+  username: String,
+  password: String,
+  purchasedCourses: [
+    {
+      courseId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Course'
+      },
+      title: String // This will store the course title
+    }
+  ]
+});
+
 
 const CourseSchema=new mongoose.Schema({
-  tite:String,
+  title:String,
   description:String,
   imageLink:String,
   price:Number

@@ -15,7 +15,16 @@ public class PascalsTriangle {
         }
         return res;
     }
-    public List<Integer> getRow(int rowIndex) {
+
+    public static List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> ans=new ArrayList<>();
+        for(int i=1;i<=numRows;i++){
+            ans.add(getRow(i));
+        }
+        return ans;
+
+    }
+    public static List<Integer> getRow(int rowIndex) {
         rowIndex+=1;
         long ans=1;
         List<Integer> list=new ArrayList<>();
@@ -27,6 +36,8 @@ public class PascalsTriangle {
         }
         return list;
     }
+
+
 
 
 }

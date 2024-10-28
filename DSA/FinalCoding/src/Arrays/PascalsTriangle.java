@@ -1,5 +1,5 @@
 package Arrays;
-
+import java.util.*;
 public class PascalsTriangle {
     public static void main(String[] args) {
         System.out.println(elementAtRowCol(3,2));
@@ -15,4 +15,18 @@ public class PascalsTriangle {
         }
         return res;
     }
+    public List<Integer> getRow(int rowIndex) {
+        rowIndex+=1;
+        long ans=1;
+        List<Integer> list=new ArrayList<>();
+        list.add(1);
+        for(int i=1;i<rowIndex;i++){
+            ans=ans*(rowIndex-i);
+            ans=ans/i;
+            list.add((int)ans);
+        }
+        return list;
+    }
+
+
 }

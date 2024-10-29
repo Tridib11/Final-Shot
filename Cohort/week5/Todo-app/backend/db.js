@@ -14,7 +14,7 @@ const todoSchema = mongoose.Schema({
   completed: Boolean,
 });
 
-const todo=mongoose.model("Todos",todoSchema)
+const todo=mongoose.model("todo-app",todoSchema)
 module.exports={
   todo
 }

@@ -7,7 +7,7 @@ export default function Todos({todos}) {
         return <div key={todo.id}>
           <h1>{todo.title}</h1>
           <h2>{todo.description}</h2>
-          <button>Mark as completed</button>
+          <button>{todo.completed==true ? "completed" : "complete"}</button>
         </div>
       })}
     </div>

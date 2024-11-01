@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile and run with redirection",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "${workspaceFolder}/Topic1-BasicProblems/basics.cpp",
+        "-o",
+        "${workspaceFolder}/Topic1-BasicProblems/a",
+        "&&",
+        "${workspaceFolder}/Topic1-BasicProblems/a",
+        "<",
+        "${workspaceFolder}/Topic1-BasicProblems/input.txt",
+        ">",
+        "${workspaceFolder}/Topic1-BasicProblems/output.txt"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always"
+      }
+    }
+  ]
+}

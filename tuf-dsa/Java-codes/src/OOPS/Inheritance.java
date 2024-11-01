@@ -26,6 +26,12 @@ class Bus extends Vehicle{
     public Bus(String numberOfBus){
         super(numberOfBus);
     }
+
+    @Override
+    public void honk(){
+        System.out.println("Give me way!!!!");
+    }
+
 }
 public class Inheritance {
     public static void main(String[] args) {

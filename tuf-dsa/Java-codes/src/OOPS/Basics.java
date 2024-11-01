@@ -7,8 +7,10 @@ class Test{
     }
 }
 
-
 public class Basics {
+    private static int nums(){
+        return 10;
+    }
     public static void main(String[] args) {
         Test test1=new Test();
         test1.assignAge(10);
@@ -18,6 +20,8 @@ public class Basics {
 
         System.out.println(test2.age);
         System.out.println(test1.age);
+
+        System.out.println(nums());
 
     }
 }

@@ -1,1 +1,2 @@
-tuf is amazing
+Enter your age 
+Kid

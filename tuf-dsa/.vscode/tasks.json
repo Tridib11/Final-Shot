@@ -6,7 +6,7 @@
       "type": "shell",
       "command": "g++",
       "args": [
-        "${workspaceFolder}/Topic1-BasicProblems/input.cpp",
+        "${workspaceFolder}/Topic1-BasicProblems/ifelse.cpp",
         "-o",
         "${workspaceFolder}/Topic1-BasicProblems/a",
         "&&",

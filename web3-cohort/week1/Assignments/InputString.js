@@ -2,7 +2,7 @@ const crypto=require("crypto")
 function findingHashWithprefix(prefix){
   let input=0
   while(true){
-    let hash="100xdevs"+input.toString()
+    let hash="Tridib"+input.toString()
     let hashedValue=crypto.createHash('sha256').update(hash).digest('hex')
     if(hashedValue.startsWith(prefix)){
       return {input:hash, hashedValue:hashedValue}

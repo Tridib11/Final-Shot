@@ -1,4 +1,3 @@
-package OOPS;
 import java.util.*;
 public class SortCharacters {
 

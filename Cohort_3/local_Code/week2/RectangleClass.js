@@ -18,4 +18,5 @@ class RectangleClass{
 
 const rect=new RectangleClass(2,4,"Red");
 const area=rect.area();
+const color=rect.paint();
 console.log(area)

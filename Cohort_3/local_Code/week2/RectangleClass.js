@@ -1,4 +1,4 @@
-class Rectancle{
+class RectangleClass{
   constructor(width,height,color){
     this.width=width;
     this.height=height;
@@ -16,6 +16,6 @@ class Rectancle{
 }
 
 
-const rect=new Rectancle(2,4,"Red");
+const rect=new RectangleClass(2,4,"Red");
 const area=rect.area();
 console.log(area)

@@ -5,7 +5,7 @@ public class Factorial {
         System.out.println(factorial(0));
     }
     public static long factorial(int n) {
-        //your code goes here
+        //your code goes here //wprkinhgfine
         if(n<=1){
             return 1;
         }

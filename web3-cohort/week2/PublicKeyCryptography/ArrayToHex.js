@@ -8,8 +8,6 @@ function arrayToHex(byteArray){
   return hexString
 }
 
-
-
 const byteArray=new Uint8Array([72,101,108,108,111]) //corresponds to Hello
 const s="Hello"
 

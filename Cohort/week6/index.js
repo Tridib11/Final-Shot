@@ -47,6 +47,23 @@ app.post("/signin", async (req, res) => {
   })
 })
 
+
+app.get("/users",(req,res)=>{
+  const token=req.headers.authorization
+  try{
+    const decoded=jwt.verify(token,secret)
+    const username=decoded.username
+    return res.json({
+      ALL_USERS
+    })
+  }catch(err){
+    return res.status(403).json({
+      msg:"Invalid token"
+    })
+  }
+
+})
+
 app.listen(3000, () => {
   console.log("Server started")
 })

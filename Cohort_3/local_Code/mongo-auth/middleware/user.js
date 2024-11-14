@@ -1,24 +1,24 @@
-const {JWT_SECRET}=require("../config")
-function userMiddleware(req,res,next){
-  const token=req.headers.authorization
-  const word=token.split(" ")[1];
-  try{
-    const decodedValue=jwt.verify(word,JWT_SECRET)
-    if(decodedValue.username){
-      next()
-    }
-    else{
+const JWT_SECRET = require("../config");
+
+const jwt=require("jsonwebtoken")
+function userMiddleware(req, res, next) {
+  const token = req.headers.authorization;
+  const word = token.split(" ")[1];
+  try {
+    const decodedValue = jwt.verify(word, JWT_SECRET);
+    if (decodedValue.username) {
+      next();
+    } else {
       res.status.json({
-        msg:"Sorry ,You are not authenticated"
-      })
+        msg: "Sorry ,You are not authenticated",
+      });
     }
-  }
-  catch(e){
+  } catch (e) {
+    console.log(e)
     res.json({
-      msg:"Incorrect inputs"
-    })
+      msg: "Incorrect inputs",
+    });
   }
 }
 
-module.exports=userMiddleware
-
+module.exports = userMiddleware;

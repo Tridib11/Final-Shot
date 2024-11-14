@@ -1,7 +1,7 @@
 const { Admin, Course } = require('../db/database')
 const adminMiddleware = require('../middleware/admin')
 const jwt=require("jsonwebtoken")
-const {JWT_SECRET}=require("../config")
+const JWT_SECRET = require('../config');
 const router = require('express').Router()
 
 
@@ -20,8 +20,8 @@ router.post('/signup' , async(req , res)=>{
 })
 
 router.post('/signin' , async(req , res)=>{
-  const username=req.body.username
-  const password=req.body.password
+  const username=req.headers.username
+  const password=req.headers.password
   const admin=await Admin.find({
     username,
     password

@@ -21,8 +21,8 @@ router.post("/signup", async (req, res) => {
 });
 
 router.post("/signin", async (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
+  const username = req.headers.username;
+  const password = req.headers.password;
   const user = await User.find({
     username,
     password,
@@ -68,7 +68,7 @@ router.post("/courses/:courseId", userMiddleware, async (req, res) => {
 });
 
 router.get("/purchasedCourses", userMiddleware, async (req, res) => {
-  const user = await User.findONe({
+  const user = await User.findOne({
     username: req.headers.username,
   });
 

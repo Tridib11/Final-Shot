@@ -1,36 +1,38 @@
-const mongoose=require("mongoose")
+const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://admin:admin@cluster0.pcgvjbl.mongodb.net/course-selling-app-v2-auth")
+mongoose.connect(
+  "mongodb+srv://admin:admin@cluster0.pcgvjbl.mongodb.net/course-selling-app-v2-auth"
+);
 
-const Admin_Schema=new mongoose.Schema({
-  username:String,
-  password:String
-})
+const Admin_Schema = new mongoose.Schema({
+  username: String,
+  password: String,
+});
 
-const User_Schema=new mongoose.Schema({
-  username:String,
-  password:String,
-  purchasedCourse:[{
-    type:mongoose.Schema.ObjectId,
-    ref:"Course"
-  }]
-})
+const User_Schema = new mongoose.Schema({
+  username: String,
+  password: String,
+  purchasedCourses: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: "Course",
+    },
+  ],
+});
 
-const Course_Schema=new mongoose.Schema({
-  title:String,
-  description:String,
-  imageLink:String,
-  price:Number
-})
+const Course_Schema = new mongoose.Schema({
+  title: String,
+  description: String,
+  imageLink: String,
+  price: Number,
+});
 
+const Admin = mongoose.model("Admin", Admin_Schema);
+const User = mongoose.model("User", User_Schema);
+const Course = mongoose.model("Course", Course_Schema);
 
-const Admin=mongoose.model("Admin",Admin_Schema)
-const User=mongoose.model("User",User_Schema)
-const Course=mongoose.model("Course",Course_Schema)
-
-module.exports={
+module.exports = {
   Admin,
   User,
-  Course
-}
-
+  Course,
+};

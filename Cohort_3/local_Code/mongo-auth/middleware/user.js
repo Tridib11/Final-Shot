@@ -3,7 +3,7 @@ function userMiddleware(req,res,next){
   const token=req.headers.authorization
   const word=token.split(" ")[1];
   try{
-    const decodedValue=jwt.verify(word,jwtSecret)
+    const decodedValue=jwt.verify(word,JWT_SECRET)
     if(decodedValue.username){
       next()
     }

@@ -4,6 +4,11 @@ const adminRouter=require("./routes/admin")
 const userRouter=require("./routes/user")
 app.use(express.json())
 
+app.get("/",(req,res)=>{
+  res.json({
+    msg:"Server is Running"
+  })
+})
 app.use("/admin",adminRouter)
 app.use("/user",userRouter)
 

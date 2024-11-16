@@ -1,0 +1,4 @@
+const JWT_SECRET="TRIDIB_GHOSH_SECRET"
+
+module.exports=JWT_SECRET
+

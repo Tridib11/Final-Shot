@@ -50,6 +50,7 @@ app.post("/me",(req,res)=>{
   const user = users.find(user=>user.username===decodedData.username)
   if (user) {
     return res.json({
+      username:user.username,
       password: user.password
     })
   } else {

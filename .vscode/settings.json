@@ -1,4 +1,0 @@
-{
-  "appService.defaultWebAppToDeploy": "undefined/subscriptions/35710027-23ad-448b-86e8-1390fecff72f/resourceGroups/Tridib/providers/Microsoft.Web/sites/Tridib-Course-Selling-api",
-  "appService.deploySubpath": "."
-}

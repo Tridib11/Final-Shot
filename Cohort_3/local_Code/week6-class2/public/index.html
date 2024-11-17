@@ -361,7 +361,7 @@
             const username = document.getElementById("signup-username").value;
             const password = document.getElementById("signup-password").value;
             try {
-                await axios.post("http://localhost:3000/signup", {
+                await axios.post("https://tridibs-in-memory-authentication-api.onrender.com/signup", {
                     username: username,
                     password: password
                 });
@@ -376,7 +376,7 @@
             const username = document.getElementById("signin-username").value;
             const password = document.getElementById("signin-password").value;
             try {
-                const response = await axios.post("http://localhost:3000/signin", {
+                const response = await axios.post("https://tridibs-in-memory-authentication-api.onrender.com/signin", {
                     username: username,
                     password: password
                 });
@@ -391,7 +391,7 @@
         // User information handling
         async function getUserInformation() {
             try {
-                const response = await axios.get("http://localhost:3000/me", {
+                const response = await axios.get("https://tridibs-in-memory-authentication-api.onrender.com/me", {
                     headers: {
                         token: localStorage.getItem("token")
                     }

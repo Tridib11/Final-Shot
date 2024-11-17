@@ -58,7 +58,12 @@ function auth(req,res,next){
   }
 }
 
-app.post("/me",auth,(req,res)=>{
+function logger(req,res,next){
+  console.log(req.method+" request came")
+  next()
+}
+
+app.post("/me",auth,logger,(req,res)=>{
   const user = users.find(user=>user.username===req.username)
   if (user) { 
     return res.json({
@@ -71,19 +76,6 @@ app.post("/me",auth,(req,res)=>{
     })
   }
 })
-app.get("/todo",auth,(req,res)=>{
-
-})
-
-app.post("/todo",auth,(req,res)=>{
-
-})
-
-app.delete("/todo",auth,(req,res)=>{
-
-})
-
-
 
 app.listen(PORT,()=>{
   console.log(`Server started at port ${PORT}`)

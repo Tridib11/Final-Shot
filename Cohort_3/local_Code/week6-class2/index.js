@@ -44,11 +44,23 @@ app.post("/signin",(req,res)=>{
   }
 })
 
-app.post("/me",(req,res)=>{
+
+function auth(req,res,next){
   const token=req.headers.token
   const decodedData=jwt.verify(token,JWT_SECRET)
-  const user = users.find(user=>user.username===decodedData.username)
-  if (user) {
+  if(decodedData.username){
+    req.username=decodedData.username
+    next()
+  }else{
+    res.json({
+      message:"You are not logged in"
+    })
+  }
+}
+
+app.post("/me",auth,(req,res)=>{
+  const user = users.find(user=>user.username===req.username)
+  if (user) { 
     return res.json({
       username:user.username,
       password: user.password
@@ -59,6 +71,19 @@ app.post("/me",(req,res)=>{
     })
   }
 })
+app.get("/todo",auth,(req,res)=>{
+
+})
+
+app.post("/todo",auth,(req,res)=>{
+
+})
+
+app.delete("/todo",auth,(req,res)=>{
+
+})
+
+
 
 app.listen(PORT,()=>{
   console.log(`Server started at port ${PORT}`)

@@ -1,14 +1,53 @@
 const express=require("express")
 const jwt=require("jsonwebtoken")
-
+const cors = require('cors')
 const app=express()
 
 const JWT_SECRET="tridib11"
 const PORT=3000
-app.use(express.json())
+app.use(express.json()) 
+
+
 
 
 const users=[]
+function auth(req, res, next) {
+  const token = req.headers.token || req.headers.authorization?.split(' ')[1];
+  
+  if (!token) {
+    return res.status(401).json({
+      message: "Token is missing. You are not logged in."
+    });
+  }
+
+  try {
+    const decodedData = jwt.verify(token, JWT_SECRET);
+    if (decodedData.username) {
+      req.username = decodedData.username;
+      next();
+    } else {
+      res.status(401).json({
+        message: "Invalid token. You are not logged in."
+      });
+    }
+  } catch (error) {
+    res.status(401).json({
+      message: "Invalid token. You are not logged in."
+    });
+  }
+}
+
+
+function logger(req,res,next){
+  console.log(req.method+" request came")
+  next()
+}
+
+
+app.use(cors())
+app.get("/",(req,res)=>{
+  res.sendFile(__dirname+"/public/index.html")
+})
 app.post("/signup",(req,res)=>{
   const username=req.body.username
   const password=req.body.password
@@ -35,7 +74,7 @@ app.post("/signin",(req,res)=>{
       username
     },JWT_SECRET)
     res.json({
-      msg:token
+      token:token
     })
   }else{
     res.json({
@@ -45,25 +84,8 @@ app.post("/signin",(req,res)=>{
 })
 
 
-function auth(req,res,next){
-  const token=req.headers.token
-  const decodedData=jwt.verify(token,JWT_SECRET)
-  if(decodedData.username){
-    req.username=decodedData.username
-    next()
-  }else{
-    res.json({
-      message:"You are not logged in"
-    })
-  }
-}
 
-function logger(req,res,next){
-  console.log(req.method+" request came")
-  next()
-}
-
-app.post("/me",auth,logger,(req,res)=>{
+app.get("/me",auth,logger,(req,res)=>{
   const user = users.find(user=>user.username===req.username)
   if (user) { 
     return res.json({

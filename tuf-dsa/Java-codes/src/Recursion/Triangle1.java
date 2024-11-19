@@ -11,7 +11,7 @@ public class Triangle1 {
             return;
         }
         if(col<row){
-            System.out.print("* ");
+            System.out.print("*");
             triangle(row,col+1);
         }else{
             System.out.println();

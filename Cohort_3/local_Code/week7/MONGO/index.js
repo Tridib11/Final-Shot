@@ -12,7 +12,6 @@ app.post("/signup",async(req,res)=>{
   const password=req.body.password
   const name=req.body.name
 
-
   const hashedPassword=await bcrypt.hash(password,5)
   await UserModel.create({
     email:email,
@@ -30,12 +29,12 @@ app.post("/signin",async(req,res)=>{
   const user=await UserModel.findOne({
     email:email
   })
-  if(!response){
+  if(!user){
     return res.status(403).json({
       message:"User doesnot Exists in the DB"
     })
   }
-  const passwordMatch=bcrypt.compare(password,res.password)
+  const passwordMatch=await bcrypt.compare(password,user.password)
   if(passwordMatch){
     const token=jwt.sign({
       id:user._id.toString()

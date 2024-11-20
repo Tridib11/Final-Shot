@@ -1,89 +1,99 @@
-const express=require("express")
-const bcrypt=require("bcrypt")
-const app=express()
-const jwt=require("jsonwebtoken")
-const {auth,JWT_SECRET}=require("./auth")
-const {UserModel,TodoModel}=require("./db")
+const express = require("express");
+const bcrypt = require("bcrypt");
+const app = express();
+const jwt = require("jsonwebtoken");
+const { auth, JWT_SECRET } = require("./auth");
+const { UserModel, TodoModel } = require("./db");
+const { z } = require("zod");
 
-app.use(express.json())
+app.use(express.json());
 
-app.post("/signup",async(req,res)=>{
-  const email=req.body.email
-  const password=req.body.password
-  const name=req.body.name
+const requiredBody = z.object({
+  email: z.string().email(),
+  password: z.string(),
+  name: z.string(),
+});
 
-  const hashedPassword=await bcrypt.hash(password,5)
-  try{
+app.post("/signup", async (req, res) => {
+  try {
+    const parsedResponse = requiredBody.safeParse(req.body);
+    if (!parsedResponse.success) {
+      return res.json({
+        message: "Incorrect format",
+      });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 5);
     await UserModel.create({
-      email:email,
-      password:hashedPassword,
-      name:name
-    })
+      email: email,
+      password: hashedPassword,
+      name: name,
+    });
     res.json({
-      message:"You are signed up"
-    })
-  }
-  catch(e){
+      message: "You are signed up",
+    });
+  } catch (e) {
+    console.error(e);
     return res.status(403).json({
-      message:"Email already exists"
-    })
+      message: "Email already exists",
+    });
   }
-})
+});
 
-app.post("/signin",async(req,res)=>{
-  const email=req.body.email;
-  const password=req.body.password
-  const user=await UserModel.findOne({
-    email:email
-  })
-  if(!user){
+app.post("/signin", async (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+  const user = await UserModel.findOne({
+    email: email,
+  });
+  if (!user) {
     return res.status(403).json({
-      message:"User doesnot Exists in the DB"
-    })
+      message: "User doesnot Exists in the DB",
+    });
   }
-  const passwordMatch=await bcrypt.compare(password,user.password)
-  if(passwordMatch){
-    const token=jwt.sign({
-      id:user._id.toString()
-    },JWT_SECRET)
+  const passwordMatch = await bcrypt.compare(password, user.password);
+  if (passwordMatch) {
+    const token = jwt.sign(
+      {
+        id: user._id.toString(),
+      },
+      JWT_SECRET
+    );
     res.json({
-      token:token
-    })
-  }else{
+      token: token,
+    });
+  } else {
     res.status(403).json({
-      message:"Incorrect Credentials"
-    })
+      message: "Incorrect Credentials",
+    });
   }
-})
+});
 
-
-app.post("/todo",auth,async(req,res)=>{
-  const userId=req.userId
-  const title=req.body.title
-  const done=req.body.done
+app.post("/todo", auth, async (req, res) => {
+  const userId = req.userId;
+  const title = req.body.title;
+  const done = req.body.done;
   await TodoModel.create({
     userId,
     title,
-    done
-  })
+    done,
+  });
 
   res.json({
-    message:"Todo created"
-  })
-})
+    message: "Todo created",
+  });
+});
 
-
-app.get("/todos",auth,async(req,res)=>{
-  const userId=req.userId
-  const todos=await TodoModel.find({
-    userId
-  })
+app.get("/todos", auth, async (req, res) => {
+  const userId = req.userId;
+  const todos = await TodoModel.find({
+    userId,
+  });
   res.json({
-    todos
-  })
-})
+    todos,
+  });
+});
 
-
-app.listen(3000,()=>{
-  console.log("Server started")
-})
+app.listen(3000, () => {
+  console.log("Server started");
+});

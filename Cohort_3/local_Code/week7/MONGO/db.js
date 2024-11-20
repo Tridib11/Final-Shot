@@ -1,6 +1,6 @@
-const mongoose=require("mongoose")
-
-mongoose.connect("mongodb+srv://admin:admin@cluster0.pcgvjbl.mongodb.net/TODO_Cohot_3")
+const {mongoose}=require("mongoose")
+const link=require("./conection")
+mongoose.connect(link)
   .then(()=>{
     console.log("DB connected")
   })

@@ -1,4 +1,5 @@
 const express=require("express")
+const bcrypt=require("bcrypt")
 const app=express()
 const jwt=require("jsonwebtoken")
 const {auth,JWT_SECRET}=require("./auth")
@@ -10,9 +11,12 @@ app.post("/signup",async(req,res)=>{
   const email=req.body.email
   const password=req.body.password
   const name=req.body.name
+
+
+  const hashedPassword=await bcrypt.hash(password,5)
   await UserModel.create({
     email:email,
-    password:password,
+    password:hashedPassword,
     name:name
   })
   res.json({

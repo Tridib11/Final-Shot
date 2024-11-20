@@ -13,14 +13,21 @@ app.post("/signup",async(req,res)=>{
   const name=req.body.name
 
   const hashedPassword=await bcrypt.hash(password,5)
-  await UserModel.create({
-    email:email,
-    password:hashedPassword,
-    name:name
-  })
-  res.json({
-    message:"You are signed up"
-  })
+  try{
+    await UserModel.create({
+      email:email,
+      password:hashedPassword,
+      name:name
+    })
+    res.json({
+      message:"You are signed up"
+    })
+  }
+  catch(e){
+    return res.status(403).json({
+      message:"Email already exists"
+    })
+  }
 })
 
 app.post("/signin",async(req,res)=>{

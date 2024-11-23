@@ -11,6 +11,8 @@ function App() {
 
   return(
     <div>
+      <h1>Todo</h1>
+      
       <input
         type="text"
         value={title}
@@ -25,6 +27,7 @@ function App() {
         onChange={(e) => setDescription(e.target.value)} // Update description state
       />
       <br />
+      <br /><br />
 
       <button
         onClick={() => {
@@ -48,12 +51,6 @@ function App() {
       </button>
 
       <br />
-
-      {/* {todos.map((todo)=>(
-        <Todo title={todo.title}   description={todo.description}/>
-      ))} */}
-      
-      {/*or*/}
 
       {todos.map((todo)=>{
         return <Todo key={todo.id}  title={todo.title}   description={todo.description}/>

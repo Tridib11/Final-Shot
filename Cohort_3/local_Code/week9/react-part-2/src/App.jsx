@@ -1,12 +1,25 @@
+import { useEffect } from "react"
 import { useState } from "react"
 
 function App(){
   const [count,setCount]=useState(0)
+
+
+  useEffect(()=>{
+    setInterval(()=>{
+      setCount(count=>count+1)
+    },1000)
+    console.log("Mountetr")
+  },[])
   return <div>
     <h1>{count}</h1>
     <Counter setCount={setCount} />
     <DCounter setCount={setCount}/>
     <RCounter setCount={setCount}/>
+
+
+    
+    
     <Start setCount={setCount}/>
 
 

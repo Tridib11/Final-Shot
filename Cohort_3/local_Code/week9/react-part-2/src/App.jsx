@@ -1,16 +1,21 @@
+import { useState } from "react"
+
 function App(){
+  const [count,setCount]=useState(0)
   return <div>
     Hello
-    <Counter/>
-  </div>
-
-  
+    <Counter setCount={setCount} />
+    {count}
+  </div>  
 }
 
 
-function Counter(){
+function Counter({ setCount }){
   return <div>
-    <button>Increase Counter</button>
+    <button onClick={()=>{
+      setCount(count=>count+1)
+    }}>Increase Counter</button>
+    
   </div>
 }
 export default App

@@ -12,13 +12,6 @@ function App(){
 }
 
 
-// function Button({random}){
-//   return <div>
-//     
-//   </div>
-// }
-
-
 function Header({title}){
   return <div>
     <h2>My name is {title}</h2>

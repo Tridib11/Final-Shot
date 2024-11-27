@@ -1,15 +1,27 @@
+import { useState } from "react"
 import "./App.css"
 function App(){
+  const[name,setName]=useState("tridib")
   return <div>
-    <Header title={"Task1"}/>
-    <Header title={"Task2"}/>
+    <button onClick={()=>{
+      setName(Math.random())
+    }}>Click to make the number random</button>
+    <Header title={name}/>
+    <Header title={"Tridib"}/>
   </div>
 }
 
 
+// function Button({random}){
+//   return <div>
+//     
+//   </div>
+// }
+
+
 function Header({title}){
   return <div>
-    <h2>{title}</h2>
+    <h2>My name is {title}</h2>
   </div>
 }
 

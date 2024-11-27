@@ -5,8 +5,8 @@ import FindTodo from './FindTodo'
 // import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <>
     {/* <App /> */}
     <FindTodo/>
-  </StrictMode>,
+  </>,
 )

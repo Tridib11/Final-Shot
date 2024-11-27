@@ -13,8 +13,21 @@ function FindTodo() {
   },[id])
   return (
     <div>
+
+      <button onClick={()=>{
+        setId(1)
+      }}>1</button>
+      <button onClick={()=>{
+        setId(2)
+      }}>2</button>
+      <button onClick={()=>{
+        setId(3)
+      }}>3</button>
+      <button onClick={()=>{
+        setId(4)
+      }}>4</button>
       {todos.map(todo=>{
-        return <DisplayTodo key={todo.id} title={todo.title} description={todo.completed? "Completed" :"Pending"} />
+        return <DisplayTodo key={todo.id}  id={todo.id} title={todo.title} description={todo.completed? "Completed" :"Pending"} />
       })}
       <TextBox setId={setId}/>
     </div>
@@ -30,8 +43,9 @@ function TextBox({setId}){
   </div>
 }
 
-function DisplayTodo({title,description}){
+function DisplayTodo({id,title,description}){
   return <div>
+    <h4>Todo no.{id}</h4>
     <h1>{title}</h1>
     <h3>{description}</h3>
   </div>

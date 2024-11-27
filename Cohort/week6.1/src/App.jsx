@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React,{ useState } from "react"
 import "./App.css"
 function App(){
   const[name,setName]=useState("tridib")
@@ -8,14 +8,25 @@ function App(){
     }}>Click to make the number random</button>
     <Header title={name}/>
     <Header title={"Tridib"}/>
+    <Header title={"Tridib"}/>
+    <Header title={"Tridib"}/>
+    <Header title={"Tridib"}/>
+    <Header title={"Tridib"}/>
   </div>
 }
 
 
-function Header({title}){
+
+const Header=React.memo(function Header({title}){
   return <div>
     <h2>My name is {title}</h2>
   </div>
-}
+})
+
+// function Header({title}){
+//   return <div>
+//     <h2>My name is {title}</h2>
+//   </div>
+// }
 
 export default App

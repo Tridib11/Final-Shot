@@ -17,7 +17,7 @@ public class LongestSubarrayWiththeGivenSumk {
             if(currentSum-sum==0){
                 start=0;
                 end=i;
-                break;
+                longest=Math.max(longest,(end-start)+1);
             }
             if(map.containsKey(currentSum-sum)){
                 start=map.get(currentSum-sum)+1;

@@ -10,7 +10,7 @@ int main() {
     cin>>w;
     if (w%2==0 && w>2) {
         for (int i=0;i<=w;i+=2) {
-            cout<<
+            cout<<i<<" "<<w-i<<endl;
         }
     }else {
         cout<<"NO";

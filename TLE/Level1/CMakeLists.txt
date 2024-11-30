@@ -4,5 +4,3 @@ project(Level1)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Level1 main.cpp
-        hello.cpp
-        wattermellon.cpp)

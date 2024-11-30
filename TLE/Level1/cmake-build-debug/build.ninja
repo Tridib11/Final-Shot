@@ -61,12 +61,6 @@ build CMakeFiles/Level1.dir/hello.cpp.obj: CXX_COMPILER__Level1_unscanned_Debug 
   OBJECT_DIR = CMakeFiles\Level1.dir
   OBJECT_FILE_DIR = CMakeFiles\Level1.dir
 
-build CMakeFiles/Level1.dir/wattermellon.cpp.obj: CXX_COMPILER__Level1_unscanned_Debug D$:/Final-Shot/TLE/Level1/wattermellon.cpp || cmake_object_order_depends_target_Level1
-  DEP_FILE = CMakeFiles\Level1.dir\wattermellon.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Level1.dir
-  OBJECT_FILE_DIR = CMakeFiles\Level1.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Level1
@@ -75,7 +69,6 @@ build CMakeFiles/Level1.dir/wattermellon.cpp.obj: CXX_COMPILER__Level1_unscanned
 #############################################
 # Link the executable Level1.exe
 
-build Level1.exe: CXX_EXECUTABLE_LINKER__Level1_Debug CMakeFiles/Level1.dir/main.cpp.obj CMakeFiles/Level1.dir/hello.cpp.obj CMakeFiles/Level1.dir/wattermellon.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Level1.dir

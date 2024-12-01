@@ -10,7 +10,7 @@ function App() {
     <div>
       <button onClick={()=>{
         setCounter(count=>count+1)
-      }}>Counter {counter}</button>
+      }}>Counter is updated to {counter}</button>
     </div>
   )
 }

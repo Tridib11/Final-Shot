@@ -1,15 +1,22 @@
+import { useState } from "react";
+
 function App() {
   return (
-    <div style={{background:"#dfe6e9",height:"100vh"}}>
-      <div style={{display:"flex",justifyContent:"center"}}>
-        <div>
-        <PostComponent name="Rohan" followerCount={2300} time={12} description="Testing props"/>
-        <PostComponent name="Sunaina" followerCount={900} time={7} description="Testing props"/>
-        <PostComponent name="100xdevs" followerCount="100K" time={12} description="Testing props"/>
-        <PostComponent name="10xdevs" followerCount="100K" time={12} description="working"/>
+    <>
+      <div style={{background:"#dfe6e9",height:"100vh"}}>
+        <ToggleMessage/>
+
+        <h1>Hello Tridib</h1>
+        <div style={{display:"flex",justifyContent:"center"}}>
+          <div>
+          <PostComponent name="Rohan" followerCount={2300} time={12} description="Testing props"/>
+          <PostComponent name="Sunaina" followerCount={900} time={7} description="Testing props"/>
+          <PostComponent name="100xdevs" followerCount="100K" time={12} description="Testing props"/>
+          <PostComponent name="10xdevs" followerCount="100K" time={12} description="working"/>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -22,6 +29,17 @@ const style = {
   padding:20,
   marginTop:10
 };
+
+
+const ToggleMessage=()=>{
+  const[isVisible,setIsVisible]=useState(false)
+  return <div>
+    <button onClick={()=>{
+      setIsVisible(!isVisible)
+    }}>Toggle Button</button>
+    {isVisible==true?<p>This message is conditionaly rendered</p>:<p></p>}
+  </div>
+}
 
 function PostComponent({name,followerCount,time,description}) {
   return (

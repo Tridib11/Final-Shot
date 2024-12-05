@@ -3,9 +3,10 @@ function App() {
     <div style={{background:"#dfe6e9",height:"100vh"}}>
       <div style={{display:"flex",justifyContent:"center"}}>
         <div>
-        <PostComponent />
-        <PostComponent />
-        <PostComponent />
+        <PostComponent name="Rohan" followerCount={2300} time={12} description="Testing props"/>
+        <PostComponent name="Sunaina" followerCount={900} time={7} description="Testing props"/>
+        <PostComponent name="100xdevs" followerCount="100K" time={12} description="Testing props"/>
+        <PostComponent name="10xdevs" followerCount="100K" time={12} description="working"/>
         </div>
       </div>
     </div>
@@ -22,7 +23,7 @@ const style = {
   marginTop:10
 };
 
-function PostComponent() {
+function PostComponent({name,followerCount,time,description}) {
   return (
     <div style={style}>
       <div style={{display:"flex"}}>
@@ -37,12 +38,12 @@ function PostComponent() {
           }}
         />
         <div style={{fontSize:10,marginLeft:10}}>
-          <b>100xdevs</b>
-          <div>23,888 followers</div>
-          <div>12m</div>
+          <b>{name}</b>
+          <div>{followerCount} followers</div>
+          <div>{time}m</div>
         </div>
       </div>
-      <div style={{fontSize:12}}>want to know how to win big? check this out of $6000 bounties</div>
+      <div style={{fontSize:12}}>{description}</div>
     </div>
   );
 }

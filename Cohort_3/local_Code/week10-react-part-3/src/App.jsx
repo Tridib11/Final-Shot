@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const BulbContext = createContext();
 function App() {
@@ -26,11 +26,13 @@ function Light() {
   );
 }
 
-function LightBulb({ bulbOn }) {
+function LightBulb() {
+  const {bulbOn} =useContext(BulbContext)
   return <div>{bulbOn ? "Bulb On" : "Bulb Off"}</div>;
 }
 
-function LightSwitch({ setBulbOn }) {
+function LightSwitch() {
+  const {setBulbOn} = useContext(BulbContext)
   return (
     <div>
       <button

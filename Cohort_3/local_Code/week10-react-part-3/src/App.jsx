@@ -32,16 +32,15 @@ function LightBulb() {
 }
 
 function LightSwitch() {
-  const {setBulbOn} = useContext(BulbContext)
+  const {bulbOn,setBulbOn} = useContext(BulbContext)
   return (
     <div>
-      <button
-        onClick={() => {
-          setBulbOn((currentState) => !currentState);
-        }}
-      >
+      <button onClick={()=>{
+        setBulbOn(bulbOn=> !bulbOn)
+      }}>
         Toggle Button
       </button>
+      
     </div>
   );
 }

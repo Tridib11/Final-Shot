@@ -1,15 +1,16 @@
 import React, { createContext, useState } from "react";
 
-
-const BulbContext=createContext();
+const BulbContext = createContext();
 function App() {
   const [bulbOn, setBulbOn] = useState(true);
   return (
     <div>
-      <BulbContext.Provider value={{
-        bulbOn:bulbOn,
-        setBulbOn:setBulbOn
-      }}>
+      <BulbContext.Provider
+        value={{
+          bulbOn: bulbOn,
+          setBulbOn: setBulbOn,
+        }}
+      >
         <Light />
       </BulbContext.Provider>
     </div>
@@ -19,22 +20,26 @@ function App() {
 function Light() {
   return (
     <div>
-      <LightBulb/>
+      <LightBulb />
       <LightSwitch />
     </div>
   );
 }
 
-function LightBulb({bulbOn}) {
+function LightBulb({ bulbOn }) {
   return <div>{bulbOn ? "Bulb On" : "Bulb Off"}</div>;
 }
 
-function LightSwitch({setBulbOn}) {
+function LightSwitch({ setBulbOn }) {
   return (
     <div>
-      <button onClick={()=>{
-        setBulbOn(currentState => !currentState)
-      }}>Toggle Button</button>
+      <button
+        onClick={() => {
+          setBulbOn((currentState) => !currentState);
+        }}
+      >
+        Toggle Button
+      </button>
     </div>
   );
 }

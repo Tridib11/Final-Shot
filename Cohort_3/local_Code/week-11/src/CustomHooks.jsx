@@ -4,7 +4,12 @@ import { usePosttitle } from './hooks/usePosttitle'
 
 function CustomHooks() {
   const[count,setCount]=useState(1);
-  const {finalData}=usePosttitle("https://jsonplaceholder.typicode.com/posts/"+count)
+  const {loading,finalData}=usePosttitle("https://jsonplaceholder.typicode.com/posts/"+count)
+  if(loading){
+    return <div>
+      Loading...
+    </div>
+  }
   return (
     <div>
 

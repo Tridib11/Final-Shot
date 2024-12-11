@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { usePosttitle } from './hooks/usePosttitle'
 
 
 function CustomHooks() {
-  const postTitle=usePosttitle()
+  const[count,setCount]=useState(1);
+  const {finalData}=usePosttitle("https://jsonplaceholder.typicode.com/posts/"+count)
   return (
     <div>
-      {postTitle}
+
+      <button onClick={()=>{
+        setCount(1)
+      }}>Button 1</button>
+      <button onClick={()=>{
+        setCount(2)
+      }}>Button 2</button>
+      <button onClick={()=>{
+        setCount(3)
+      }}>Button 3</button>
+
+      <br /><br />
+      {JSON.stringify(finalData)}
     </div>
   )
 }

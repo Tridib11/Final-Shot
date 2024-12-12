@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import "./App.css"
+import { RecoilRoot } from 'recoil'
 function TestingRecoil() {
   return (
-    <div>
+    <RecoilRoot>
       <Counter/>
-    </div>
+    </RecoilRoot>
   )
 }
 

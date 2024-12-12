@@ -17,6 +17,6 @@ export function usePosttitle(url){
 
   return {
     finalData,
-    loading
+    loa
   }
 }

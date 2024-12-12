@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import Test from './Test'
+import TestingDebounce from './TestingDebounce'
 // import TestingUsePrev from './TestingUsePrev'
 
 
@@ -11,7 +12,8 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
    {/* <CustomHooks/> */}
    {/* <TestingUsePrev/> */}
-   <Test/>
+   {/* <Test/> */}
+   <TestingDebounce/>
     
   </StrictMode>,
 )

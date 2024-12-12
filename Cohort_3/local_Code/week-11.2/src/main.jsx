@@ -1,11 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import ContextApi from './ContextApi'
+import TestingRecoil from './TestingRecoil'
+
 
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <ContextApi/>
-  </StrictMode>,
+  <TestingRecoil/>
 )

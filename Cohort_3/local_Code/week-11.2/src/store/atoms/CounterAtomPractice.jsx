@@ -7,8 +7,8 @@ export const CounterAtomPractice=atom({
 
 export const evenSelector=selector({
   key:"isEvenSelector",
-  get:function({get}){
-    const currentCount=get(currentCount)
+  get:function({get}){ 
+    const currentCount=get(CounterAtomPractice)
     const isEven=(currentCount%2==0)
     return isEven
   }

@@ -1,7 +1,6 @@
 import React from 'react'
 import { RecoilRoot, useRecoilValue } from 'recoil'
 import { todosAtomFamily } from './Components/AtomFamily'
-
 function TestingAtomFamily() {
   return (
     <div>

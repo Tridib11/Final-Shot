@@ -17,12 +17,12 @@ function Testing() {
 function MainApp(){
   const [networkCount, setNetworkCount] = useRecoilState(notifications);
   const totalNotificationCount=useRecoilValue(totalNotificationSelector)
-  useEffect(()=>{
-    axios.get("http://localhost:3000/notification")
-    .then(res=>{
-      setNetworkCount(res.data)
-    })
-  },[])
+  // useEffect(()=>{
+  //   axios.get("http://localhost:3000/notification")
+  //   .then(res=>{
+  //     setNetworkCount(res.data)
+  //   })
+  // },[])
 
   return <div>
     <button>Home</button>

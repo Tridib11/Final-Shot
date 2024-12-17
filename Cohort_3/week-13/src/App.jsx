@@ -7,10 +7,15 @@ function App() {
 
   return (
     <>
-      <div className='flex justify-center'>
-        <div>Class 1</div>
-        <div>Class 2</div>
-        <div>Class 3</div>
+      {/* <div className='flex justify-center'>
+        <div className='bg-orange-600'>Class 1</div>
+        <div className='bg-orange-100'>Class 2</div>
+        <div className='bg-lime-500'>Class 3</div>
+      </div> */}
+      <div className='grid grid-cols-12'>
+        <div className='bg-orange-600 col-span-5'>Class 1</div>
+        <div className='bg-orange-100 col-span-5'>Class 2</div>
+        <div className='bg-lime-500 col-span-2'>Class 3</div>
       </div>
     </>
   )

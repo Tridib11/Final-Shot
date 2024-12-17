@@ -13,9 +13,9 @@ function App() {
         <div className='bg-lime-500'>Class 3</div>
       </div> */}
       <div className='grid grid-cols-12'>
-        <div className='bg-orange-600 col-span-5'>Class 1</div>
-        <div className='bg-orange-100 col-span-5'>Class 2</div>
-        <div className='bg-lime-500 col-span-2'>Class 3</div>
+        <div className='md:bg-green-700 sm:bg-blue-600 col-span-5 bg-purple-600  '>Class 1</div>
+        <div className='bg-red-400 col-span-5'>Class 2</div>
+        <div className='bg-green-500 col-span-2'>Class 3</div>
       </div>
     </>
   )

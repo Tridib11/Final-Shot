@@ -14,7 +14,7 @@ export default {
         },
         green:{
           400:"#36c6c0"
-        }
+        },
       },
     },
   },

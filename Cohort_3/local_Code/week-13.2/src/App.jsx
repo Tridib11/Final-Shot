@@ -6,9 +6,10 @@ import { MainComponent } from './Components/MainComponent'
 
 function App() {
   return (
-    <div>
-      {/* <Sidebar/> */}
+    <div className='flex'>
+      <Sidebar/>
       {/* <DarkMode/> */}
+
       <MainComponent/>
       
     </div>

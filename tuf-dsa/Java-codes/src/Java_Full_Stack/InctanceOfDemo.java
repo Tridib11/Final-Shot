@@ -9,7 +9,5 @@ public class InctanceOfDemo {
         boolean result=s1 instanceof String;
         System.out.println(result);
 
-
-        }
     }
 }

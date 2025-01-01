@@ -8,5 +8,8 @@ public class InctanceOfDemo {
         System.out.println(s1);
         boolean result=s1 instanceof String;
         System.out.println(result);
+
+
+        }
     }
 }

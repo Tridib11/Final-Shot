@@ -7,5 +7,7 @@ public class Output {
         System.out.println(new int[]{1,2,3,4});
         String name=null;
         System.out.println(name);
+        System.out.println("a"+1);
+        System.out.println('a'+1);
     }
 }

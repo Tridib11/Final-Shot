@@ -13,5 +13,19 @@ public class Output {
 
         String a=new String("RAm");
         System.out.println(a);
+
+        String s1="Hello";
+        String s2="World";
+        System.out.println(s1+s2);
+
+
+        String ans1="Hey man Whassup";
+        String ans2="man";
+        System.out.println(ans1.contains(ans2));
+
+
+
+        StringBuffer str=new StringBuffer(new String("Rahul"));
+        System.out.println(str);
     }
 }

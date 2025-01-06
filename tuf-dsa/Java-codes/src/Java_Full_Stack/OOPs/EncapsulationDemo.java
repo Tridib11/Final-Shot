@@ -8,15 +8,11 @@ public class EncapsulationDemo {
         System.out.println(pen1.getColor());
         System.out.println(pen1.getTip());
 
-
         Pen pen2=new Pen();
         pen2.setColor("Blue");
         pen2.setTip(2);
         System.out.println(pen2.getColor());
         System.out.println(pen2.getTip());
-
-
-
     }
 }
 

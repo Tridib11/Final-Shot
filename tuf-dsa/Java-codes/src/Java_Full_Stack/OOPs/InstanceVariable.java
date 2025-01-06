@@ -11,5 +11,6 @@ public class InstanceVariable {
         InstanceVariable instance=new InstanceVariable();
         System.out.println(instance.a);
         System.out.println(instance.b);
+
     }
 }

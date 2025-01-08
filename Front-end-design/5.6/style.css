@@ -12,7 +12,8 @@ html,body{
 #box{
 	height: 300px;
 	width: 300px;
-	justify-content: center;
+	/* justify-content: center; */
+	justify-content: space-between;
 	align-items: center;
 	background-color: red;
 	display: flex;

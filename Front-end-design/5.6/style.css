@@ -9,3 +9,33 @@ html,body{
 	width:100%;
 }
 
+
+
+#box{
+	height: 300px;
+	width: 300px;
+	justify-content: center;
+	background-color: red;
+	display: flex;
+}
+
+#box1{
+	height: 50px;
+	width: 50px;
+	background-color: green;
+	border: 2px solid black;
+}
+
+#box2{
+	height: 50px;
+	width: 50px;
+	background-color: yellow;
+	border: 2px solid black;
+}
+
+#box3{
+	height: 50px;
+	width: 50px;
+	background-color: orange;
+	border: 2px solid black;
+}

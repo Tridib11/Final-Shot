@@ -12,3 +12,19 @@ html,body{
 p{
   display: inline-block;
 }
+
+
+#box{
+  position: relative;
+  height: 300px;
+  width: 300px;
+  background-color: red;
+}
+
+#inside-box{
+  position: absolute;
+  left: 50%;
+  height: 20px;
+  width: 20px;
+  background-color: yellow;
+}

@@ -13,8 +13,10 @@ html,body{
 	height: 300px;
 	width: 300px;
 	justify-content: center;
+	align-items: center;
 	background-color: red;
 	display: flex;
+	border: 2px solid black;
 }
 
 #box1{
@@ -37,4 +39,6 @@ html,body{
 	background-color: orange;
 	border: 2px solid black;
 }
+
+
 

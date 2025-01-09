@@ -1,7 +1,12 @@
 package Java_Full_Stack.OOPs;
 
 public class MultiLevel_InheritanceDemo {
-
+    public static void main(String[] args) {
+        Dog dobby=new Dog();
+        dobby.eat();
+        dobby.legs=4;
+        System.out.println(dobby.legs);
+    }
 }
 
 class Animals{

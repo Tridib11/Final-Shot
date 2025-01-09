@@ -4,7 +4,7 @@ package Java_Full_Stack.OOPs;
 /*
 * Inheritance is when properties and methods of base class are passed to a derived class
 * */
-public class InheritanceDemo {
+public class SingleLevel_InheritanceDemo {
     public static void main(String[] args) {
         Fish shark=new Fish();
         shark.eat();

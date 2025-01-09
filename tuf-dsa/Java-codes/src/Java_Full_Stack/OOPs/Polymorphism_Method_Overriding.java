@@ -2,7 +2,8 @@ package Java_Full_Stack.OOPs;
 /*
 Method Overiding (Happens at run time )
 
-When a derived class Extends a parent class and we use the derived class Object then
+When a derived class Extends a parent class and we use the derived class(child class)
+Object then
 the function of the derived class is only called
  */
 public class Polymorphism_Method_Overriding {

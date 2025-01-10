@@ -16,10 +16,18 @@ public class Abstraction_demo {
         Horse h=new Horse();
         h.eat();
         h.walk();
+//        h.changeColor();
+
+        System.out.println(h.color);
     }
 }
 
 abstract class AnimalsAbstract{
+    String color;
+
+    AnimalsAbstract(){
+        color="Brown";
+    }
 
     //Non-Abstract methods
     void eat(){
@@ -32,6 +40,10 @@ abstract class AnimalsAbstract{
 //sub class
 
 class Horse extends AnimalsAbstract{
+
+    void changeColor(){
+        color="Dark Brown";
+    }
     void walk(){
         System.out.println("Walks on 4 legs");
     }
@@ -39,6 +51,10 @@ class Horse extends AnimalsAbstract{
 
 
 class Chicken extends AnimalsAbstract{
+
+    void changeColor(){
+        color="Yellow";
+    }
    void walk(){
        System.out.println("Walks on 2 legs");
    }

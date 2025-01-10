@@ -20,7 +20,8 @@ class Animalss{
 }
 
 class Deer extends Animalss{
-    void eat(){
+
+     void eat(){
         System.out.println("Eats Grass");
     }
 }

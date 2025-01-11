@@ -14,4 +14,14 @@ html,body{
   height: 100%;
   width: 100%;
   background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.elem{
+  height: 200px;
+  width: 200px;
+  background-color: crimson;
+  border: 2px solid black;
 }

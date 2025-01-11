@@ -8,3 +8,29 @@ html,body{
   height: 100%;
   width:100%;
 }
+
+#main{
+  height: 100%;
+  width: 100%;
+  background-color: #ededed;
+  display: grid;
+}
+
+
+#right{
+  background-color: blue;
+}
+
+#left-top-left{
+  background-color: crimson;
+}
+
+#left-top-right{
+  background-color: blueviolet;
+}
+#left-center{
+  background-color: royalblue;
+}
+#left-bottom{
+  background-color: chartreuse;
+}

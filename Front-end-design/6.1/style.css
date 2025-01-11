@@ -15,11 +15,17 @@ html,body{
   width: 100%;
   background-color: lightblue;
   display: grid;
-
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 200px 200px;
+  /* align-items: center;
+  justify-items: center; */
+  justify-content: center;
+  align-content: center;
 }
 
 .elem{
-
+  height: 200px;
+  width: 200px;
   background-color: crimson;
   border: 2px solid black;
 }

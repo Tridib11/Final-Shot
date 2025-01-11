@@ -14,12 +14,9 @@ html,body{
   width: 100%;
   background-color: #ededed;
   display: grid;
+  grid-template-columns: 50% 50%;
 }
 
-
-#right{
-  background-color: blue;
-}
 
 #left-top-left{
   background-color: crimson;
@@ -27,6 +24,7 @@ html,body{
 
 #left-top-right{
   background-color: blueviolet;
+  grid-row: 2/4  ;
 }
 #left-center{
   background-color: royalblue;

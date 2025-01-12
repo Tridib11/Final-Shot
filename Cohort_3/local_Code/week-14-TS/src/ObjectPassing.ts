@@ -8,6 +8,6 @@ function greet_Ibject(user:{
 let user={
   name:"Tridib",
   age:21
-}
+} 
 
 greet_Ibject(user)

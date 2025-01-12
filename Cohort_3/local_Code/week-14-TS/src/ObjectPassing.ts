@@ -1,4 +1,4 @@
-function greet_Ibject(user:{
+function greet_Object(user:{
   name:string,
   age:number
 }){
@@ -10,4 +10,4 @@ let user={
   age:21
 } 
 
-greet_Ibject(user)
+greet_Object(user)

@@ -1,1 +1,1 @@
-{"root":["./index.ts"],"version":"5.7.3"}
+{"root":["./greet.ts","./index.ts","./sum.ts"],"version":"5.7.3"}

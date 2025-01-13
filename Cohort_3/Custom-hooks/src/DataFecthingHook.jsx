@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-function DataFecthingHook() {
+
+function useTodos(){
   const[todos,setTodos]=useState([])
   useEffect(()=>{
     axios.get("https://final-shot.onrender.com/todos")
@@ -8,6 +9,11 @@ function DataFecthingHook() {
       setTodos(res.data.todos)
     })
   },[])
+
+  return todos
+}
+function DataFecthingHook() {
+  const todos=useTodos()
   return (
     <div>
       {todos.map(todo=><Track key={todo.id} todo={todo}/>)}

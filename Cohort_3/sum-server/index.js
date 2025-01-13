@@ -37,22 +37,26 @@ const todos = [
   },
 ];
 
-
-app.get("/todo",(req,res)=>{
-  const todo=todos.find(t=>t.id===req.query.id)
+app.get("/todo", (req, res) => {
+  const todo = todos.find((t) => t.id === req.query.id);
   res.json({
-    todo
-  })
-})
+    todo,
+  });
+});
 
-app.get("/todos",(req,res)=>{
-  const randomTodos=[]
-  for(let i=0;i<5;i++){
-    if(Math.random()>0.5){
-      randomTodos.push(todos[i])
+app.get("/todos", (req, res) => {
+  const randomTodos = [];
+  for (let i = 0; i < 5; i++) {
+    if (Math.random() > 0.5) {
+      randomTodos.push(todos[i]);
     }
   }
   res.json({
-    todos:randomTodos
-  })
+    todos: randomTodos,
+  });
+});
+
+
+app.listen(3000,()=>{
+  console.log("Server Started")
 })

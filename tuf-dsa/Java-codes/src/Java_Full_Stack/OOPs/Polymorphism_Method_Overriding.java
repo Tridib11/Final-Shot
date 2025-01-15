@@ -25,5 +25,6 @@ class Deer extends Animalss{
 
      void eat(){
         System.out.println("Eats Grass");
+         System.out.println("SOmeting");
     }
 }

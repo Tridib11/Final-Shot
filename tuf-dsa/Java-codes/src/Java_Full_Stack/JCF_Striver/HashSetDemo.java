@@ -6,7 +6,7 @@ public class HashSetDemo {
     public static void main(String[] args) {
         /*
         * Stores unique element in any random order
-        *
+        * O(1) time
         * */
 
         HashSet<Integer> hs=new HashSet<>();

@@ -5,8 +5,8 @@ import java.util.TreeSet;
 public class TreeSetDemo {
     public static void main(String[] args) {
         /*
-         * Stores unique element in any Sorted order
-         *
+         * Stores unique element in any Sorted order(log time)
+         * log n time where n is the size of the treeSet
          * */
 
         TreeSet<Integer> ts=new TreeSet<>();

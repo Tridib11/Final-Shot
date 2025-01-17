@@ -22,7 +22,7 @@ public class TreeSetDemo {
 //        }
 //        ts.remove(2);
 //        System.out.println(ts);
-        System.out.println(ts.floor(8));//first value less than 8
-        System.out.println(ts.ceiling(8));//fist value greater than 8
+        System.out.println(ts.floor(8));//first value less than or equal to 8(<=)
+        System.out.println(ts.ceiling(8));//fist value greater than or equal to 8(>=)
     }
 }

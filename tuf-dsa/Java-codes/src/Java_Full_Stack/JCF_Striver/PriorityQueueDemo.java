@@ -32,8 +32,5 @@ public class PriorityQueueDemo {
         pq.poll();
         System.out.println(pq);
         pq.peek();
-
-
-
     }
 }

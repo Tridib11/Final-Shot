@@ -1,4 +1,4 @@
-function func(anotherfunction:Function){
+function func(anotherfunction:()=>void){
   setTimeout(anotherfunction,5000)
 }
 

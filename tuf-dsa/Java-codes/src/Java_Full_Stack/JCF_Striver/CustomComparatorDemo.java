@@ -36,4 +36,27 @@ public class CustomComparatorDemo {
         });
         System.out.println(ans);
     }
+
+    //a Function to make it more readable
+
+    private static Comparator<Integer> getComparator() {
+        return new Comparator<Integer>() {
+            @Override
+            public int compare(Integer num1, Integer num2) {
+                //num1<num2
+                //order is wrong
+                /*
+                If not in the correct order then return Positive 1
+                if it is in the correct order return -1 else 0
+                 */
+                if (num1 < num2) {
+                    return 1;
+                } else if (num1 > num2) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            }
+        };
+    }
 }

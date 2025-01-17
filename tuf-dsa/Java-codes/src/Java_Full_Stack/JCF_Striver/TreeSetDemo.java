@@ -10,17 +10,19 @@ public class TreeSetDemo {
          * */
 
         TreeSet<Integer> ts=new TreeSet<>();
+        ts.add(12);
+        ts.add(9);
         ts.add(1);
-        ts.add(1);
-        ts.add(2);
         ts.add(4);
-        ts.add(-1);
+
 
         System.out.println(ts);
-        for(var i:ts){
-            System.out.println(i);
-        }
-        ts.remove(2);
-        System.out.println(ts);
+//        for(var i:ts){
+//            System.out.println(i);
+//        }
+//        ts.remove(2);
+//        System.out.println(ts);
+        System.out.println(ts.floor(8));//first value less than 8
+        System.out.println(ts.ceiling(8));//fist value greater than 8
     }
 }

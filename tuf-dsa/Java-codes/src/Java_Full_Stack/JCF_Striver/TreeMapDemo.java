@@ -6,6 +6,7 @@ public class TreeMapDemo {
     public static void main(String[] args) {
         /*
         Always stores sorted order of keys
+        Map doesnot stores duplicates
 
         uses log(n)
          */
@@ -13,6 +14,7 @@ public class TreeMapDemo {
         map.put(12,"Tridib");
         map.put(1,"Raj");
         map.put(8,"Rima");
+        map.put(8,"ROhan");
         System.out.println(map);
         System.out.println(map.get(8));
         System.out.println(map.size());

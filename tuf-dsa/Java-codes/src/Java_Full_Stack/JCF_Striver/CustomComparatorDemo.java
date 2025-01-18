@@ -51,6 +51,7 @@ public class CustomComparatorDemo {
                  */
                 if (num1 < num2) {
                     return 1;
+
                 } else if (num1 > num2) {
                     return -1;
                 } else {

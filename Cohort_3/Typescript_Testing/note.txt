@@ -1,5 +1,14 @@
 What are type and interface?
 
+
+"In TypeScript, both type and interface are used to define the structure of data, but they have some key differences in how they work and what they are used for."
+
+Key Differences:
+Basic Usage
+
+Interface is used to define the structure of objects, particularly for object-oriented design.
+Type is a more flexible construct that can describe not only objects but also other kinds of types, like unions, intersections, or primitives.
+
 Both are used in TypeScript to define the shape of something, like what properties an object should have or how data should look.
 Think of them as "blueprints" for your data.
 

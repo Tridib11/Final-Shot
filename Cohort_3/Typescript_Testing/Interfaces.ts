@@ -1,8 +1,9 @@
 interface User {
   firstname: string,
   lastName: string,
-  age: number
-}
+  age: number,
+  email?:string  //optional arguement (Can give it and not give it as well)
+ }
 
 function isLegal(user: User): boolean {
   if (user.age > 18) {

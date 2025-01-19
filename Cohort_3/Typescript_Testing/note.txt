@@ -28,3 +28,6 @@ You don’t need to expand it later.
 Easiest Analogy
 Think of interfaces as Lego blocks: You can attach more pieces (properties) later to make them bigger.
 Think of types as clay sculptures: Once you shape them, they’re set and can’t be modified later.
+
+
+Types cannot be used to implement  in classes but interface can be used to implement in classes

@@ -1,16 +1,21 @@
 interface People{
   name:string,
   age:number,
-  greet():string
+  // greet():string
 }
 
-let person:People={
-  name:"Tridib",
-  age:21,
-  greet:()=>{
-    return "hi"
+
+class Manager implements People{
+  name:string
+  age:number
+
+  constructor(name:string,age:number){
+    this.name=name
+    this.age=age
   }
+
 }
 
-let greeting=person.greet()
-console.log(greeting)
+
+let user1=new Manager("Rohan",24)
+console.log(user1.name)

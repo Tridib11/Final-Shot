@@ -13,7 +13,6 @@ class Manager implements People{
     this.name=name
     this.age=age
   }
-
 }
 
 

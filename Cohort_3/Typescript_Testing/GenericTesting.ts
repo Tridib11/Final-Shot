@@ -1,8 +1,8 @@
-type Input=number | string
-
-function firstEl(arr:Input[]){
-  return arr[0]
+function identity<T>(arg:T){
+  return arg;
 }
 
-const value1=firstEl(["Tridib","Rohan"])
-console.log(value1)
+let output1=identity<string>("My string")
+
+console.log(output1.toUpperCase())
+let output2=identity<number>(100)

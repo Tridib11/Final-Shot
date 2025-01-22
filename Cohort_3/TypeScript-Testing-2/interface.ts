@@ -1,7 +1,7 @@
 interface User {
   name: string,
   age: number,
-  address: {
+  address?: {
     city: string,
     country: string,
     pincode: number

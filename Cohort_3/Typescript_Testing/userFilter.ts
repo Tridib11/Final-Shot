@@ -22,7 +22,7 @@ const details:Users2[]=[
     age:22
   },
   {
-    firstName:"Omraj",
+    firstName:"Rahul",
     lastName:"Kamat",
     age:11
   }

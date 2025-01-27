@@ -1,2 +1,2 @@
-const ans:number=10
-console.log(ans)
+// const ans:number=10
+// console.log(ans)

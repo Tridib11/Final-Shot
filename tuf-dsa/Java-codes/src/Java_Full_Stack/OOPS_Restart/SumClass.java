@@ -2,6 +2,10 @@ package Java_Full_Stack.OOPS_Restart;
 
 
 class Sum{
+
+    Sum(){
+        System.out.println("Default constructor called");
+    }
     public int Sum(int a , int b){
         return a+b;
     }

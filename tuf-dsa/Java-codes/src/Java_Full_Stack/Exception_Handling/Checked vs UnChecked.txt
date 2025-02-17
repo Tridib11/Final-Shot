@@ -1,0 +1,28 @@
+Checked Exception - The exception that is being checked at Compile time is called
+                    checked
+
+                    IOException	When an I/O operation fails (e.g., reading a file that doesn’t exist).
+                    FileNotFoundException	When trying to access a file that does not exist (subclass of IOException).
+                    SQLException	When there’s an error in database operations (e.g., wrong query syntax).
+                    ClassNotFoundException	When the JVM cannot find a specified class at runtime.
+                    InterruptedException	When a thread is interrupted while waiting or sleeping.
+                    ParseException	When parsing fails (e.g., converting a string to a date).
+                    MalformedURLException	When an invalid URL format is used.
+                    CloneNotSupportedException	When cloning an object that does not implement Cloneable.
+
+UnChecked Exception - The exception that is  not being checked at Compile time is called
+                      unchecked
+
+                      Exception	When It Occurs
+                      NullPointerException (NPE)	When trying to access a method/field of a null object.
+                      ArrayIndexOutOfBoundsException	When accessing an array index that is out of bounds.
+                      StringIndexOutOfBoundsException	When accessing a string index that is out of range.
+                      ArithmeticException	When dividing by zero (int a = 5 / 0;).
+                      IllegalArgumentException	When passing an invalid argument to a method.
+                      NumberFormatException	When trying to parse an invalid string as a number (Integer.parseInt("abc")).
+                      ClassCastException	When trying to cast an object to an incompatible class.
+                      UnsupportedOperationException	When an unsupported operation is attempted (e.g., modifying an immutable list).
+
+You can do one Thing
+
+either try catch or you can use the throws keyword

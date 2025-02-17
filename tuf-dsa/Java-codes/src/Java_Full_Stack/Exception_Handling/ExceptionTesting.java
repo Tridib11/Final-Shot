@@ -8,6 +8,7 @@ public class ExceptionTesting {
         for(int i=0;i<numerators.length;i++){
             System.out.println(divide(numerators[i],denominators[i]));
         }
+        System.out.println("Completed");
     }
 
     public static int divide(int a ,int b){

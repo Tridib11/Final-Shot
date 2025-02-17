@@ -35,9 +35,13 @@ class Bus extends Vehicle{
 
 public class Inheritance {
     public static void main(String[] args) {
-        Car c= new Car("KA21145");
-        c.printCarNumber();
-        c.Honk();
+//        Car c= new Car("KA21145");
+//        c.printCarNumber();
+//        c.Honk();
+
+        Vehicle v=new Car("KA");
+        v.Honk();
+
 
         Bus b=new Bus("KA14456");
         b.printBusNumber();

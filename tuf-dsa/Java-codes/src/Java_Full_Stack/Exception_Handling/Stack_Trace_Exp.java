@@ -6,7 +6,8 @@ public class Stack_Trace_Exp {
             level1();
         }
         catch(Exception e){
-            e.printStackTrace();
+//            e.printStackTrace();
+            e.getMessage();
         }
     }
 

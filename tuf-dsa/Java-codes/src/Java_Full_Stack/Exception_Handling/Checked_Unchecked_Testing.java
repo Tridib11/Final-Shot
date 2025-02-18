@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 public class Checked_Unchecked_Testing {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         readFile("myFile.txt");
     }
 

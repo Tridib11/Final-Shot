@@ -1,10 +1,9 @@
 package Java_Full_Stack.Exception_Handling;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
-public class Checked_Unchecked_Testing {
+public class Checked_Testing {
     public static void main(String[] args) throws FileNotFoundException {
         readFile("myFile.txt");
     }

@@ -17,7 +17,14 @@ public class MyThread2 extends Thread {
         }
     }
     public static void main(String[] args) {
-        MyThread2 t2=new MyThread2("Tridib");
-        t2.start();
+        MyThread2 low=new MyThread2("low");
+        MyThread2 medium=new MyThread2("medium");
+        MyThread2 high=new MyThread2("high");
+        low.setPriority(Thread.MIN_PRIORITY);
+        medium.setPriority(Thread.NORM_PRIORITY);
+        high.setPriority(Thread.MAX_PRIORITY);
+        low.start();
+        medium.start();
+        high.start();
     }
 }

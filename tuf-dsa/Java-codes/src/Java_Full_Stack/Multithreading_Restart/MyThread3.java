@@ -15,6 +15,6 @@ public class MyThread3 extends Thread {
     public static void main(String[] args) {
         MyThread3 t=new MyThread3();
         t.start();
-        t.interrupt();
+        t.interrupt(); //stops the current thread suddenly
     }
 }

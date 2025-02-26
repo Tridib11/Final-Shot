@@ -17,12 +17,10 @@ public class MyThread5 extends Thread {
             System.out.println("Thread Running");
         }
     }
-
     public static void main(String[] args) {
         MyThread5 a=new MyThread5("a");
         a.setDaemon(true);
         a.start();
         System.out.println("Thread Stopped");
-
     }
 }

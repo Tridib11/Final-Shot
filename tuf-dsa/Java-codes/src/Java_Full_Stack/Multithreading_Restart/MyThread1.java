@@ -12,8 +12,12 @@ public class MyThread1 extends Thread {
            }
        }
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         MyThread1 t1=new MyThread1();
         t1.start();
+        System.out.println(t1.getState());
+        t1.join();
+        System.out.println(t1.getState());
+        System.out.println("Hello");
     }
 }

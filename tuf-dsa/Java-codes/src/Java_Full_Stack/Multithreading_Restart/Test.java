@@ -5,7 +5,7 @@ public class Test {
         World w=new World();
         w.start();
         for(;;){
-            System.out.println("Hello");
+            System.out.println(Thread.currentThread().getName());
         }
     }
 }

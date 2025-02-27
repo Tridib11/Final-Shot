@@ -29,6 +29,5 @@ public class CustomClass {
         Data dataObj1=new Data(10,"Tridib");
         Data dataObj2=new Data(11,"Rohan");
         System.out.println(dataObj1.getName());
-
     }
 }

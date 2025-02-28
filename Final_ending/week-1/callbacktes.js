@@ -1,12 +1,8 @@
-function calculateArithmetic(a,b,functionToCall){
-  const ans=functionToCall(a,b)
-  console.log(ans)
+function calculateArithmetic(a, b, functionToCall) {
+  const ans = functionToCall(a, b);
+  console.log(ans);
 }
-
-
-function Sum(a,b){
-  return a+b
+function Sum(a, b) {
+  return a + b;
 }
-
-
-calculateArithmetic(10,20,Sum)
+calculateArithmetic(10, 20, Sum);

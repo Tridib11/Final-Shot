@@ -2,6 +2,7 @@ const express = require("express");
 const { createTodo, updateTodo } = require("./types");
 const { todo } = require("./db");
 const cors=require("cors")
+const mongoose = require("mongoose");
 const app = express();
 
 
@@ -42,18 +43,36 @@ app.put("/completed", async (req, res) => {
       msg: "You sent the wrong inputs",
     });
   }
-  await todo.update(
-    {
-      _id: req.body.id,
-    },
-    {
-      completed: true,
-    }
-  );
 
-  res.json({
-    msg: "Todo marked as completed",
-  });
+  // Validate ObjectId format
+  if (!mongoose.Types.ObjectId.isValid(req.body.id)) {
+    return res.status(400).json({
+      msg: "Invalid todo ID format",
+    });
+  }
+
+  try {
+    const updatedTodo = await todo.findByIdAndUpdate(
+      req.body.id,
+      { completed: true },
+      { new: true }
+    );
+
+    if (!updatedTodo) {
+      return res.status(404).json({
+        msg: "Todo not found",
+      });
+    }
+
+    return res.json({
+      msg: "Todo marked as completed",
+      todo: updatedTodo,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      msg: "Server error while updating todo",
+    });
+  }
 });
 
 app.listen(3000, () => {

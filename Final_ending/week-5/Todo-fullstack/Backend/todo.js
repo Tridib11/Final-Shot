@@ -1,10 +1,13 @@
 const express = require("express");
 const { createTodo, updateTodo } = require("./types");
 const Todo = require("./db");
+const mongoose = require("mongoose");
 const app = express();
+const cors = require("cors");
 
 const PORT = 3000;
 
+app.use(cors());
 app.use(express.json());
 
 app.post("/todo", async (req, res) => {
@@ -34,27 +37,42 @@ app.get("/todos", async (req, res) => {
 });
 
 app.put("/completed", async (req, res) => {
-  const updateId = req.body.id;
-  const parsedBodyCheck = updateTodo.safeParse(updateId);
+  const updatePayload = req.body;
+  const parsedPayload = updateTodo.safeParse(updatePayload);
 
-  if (!parsedBodyCheck.success) {
+  if (!parsedPayload.success) {
     return res.status(411).json({
       msg: "Incorrect inputs",
     });
   }
 
-  await Todo.updateOne(
-    {
-      _id: updateId,
-    },
-    {
-      completed: true,
-    }
-  );
+  // Validate ObjectId format
+  if (!mongoose.Types.ObjectId.isValid(req.body.id)) {
+    return res.status(400).json({
+      msg: "Invalid todo ID format",
+    });
+  }
 
-  res.json({
-    msg: "Todo marked as completed",
-  });
+  try {
+    const updatedTodo = await Todo.findByIdAndUpdate(req.body.id, {
+      completed: true,
+    });
+
+    if (!updatedTodo) {
+      return res.status(404).json({
+        msg: "Todo not found",
+      });
+    }
+
+    return res.json({
+      msg: "Todo marked as completed",
+      todo: updatedTodo,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      msg: "Server error while updating todo",
+    });
+  }
 });
 
 app.listen(PORT, () => {

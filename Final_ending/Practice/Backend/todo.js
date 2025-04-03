@@ -38,9 +38,9 @@ app.post("/todo", async (req, res) => {
 
 app.put("/completed", async (req, res) => {
   const id = req.body;
-  console.log(id);
+
   const parsedID = updateTodo.safeParse(id);
-  console.log(parsedID);
+
 
   if (!parsedID.success) {
     return res.status(411).json({

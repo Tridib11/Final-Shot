@@ -4,7 +4,10 @@ function App() {
   const[title,setTitle]=useState("My name is Tridib")
   return (
     <div>
-      
+      <Header title={title}></Header>
+      <button onClick={()=>{
+        setTitle("My name is "+Math.random())
+      }}>Update the Title</button>
     </div>
   )
 }

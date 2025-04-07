@@ -1,10 +1,14 @@
-import React, {memo, useState } from 'react'
+import React, {memo, useCallback, useState } from 'react'
 
 function MemoTest() {
   const[count,setCount]=useState(0)
+
+  const inputFunction=useCallback(()=>{
+    console.log("Hi there")
+  },[])
   return (
     <div>
-      <ButtonComponent/>
+      <ButtonComponent inputFunction={inputFunction}/>
       <button onClick={()=>{
         setCount(count+1) 
       }}>Click me {count}</button>
@@ -12,7 +16,7 @@ function MemoTest() {
   )
 }
 
-const ButtonComponent=memo(()=>{
+const ButtonComponent=memo(({inputFunction})=>{
   console.log("Button Component rerenderdd")
 
   return <div>

@@ -6,6 +6,8 @@ function MemoTest() {
   const inputFunction=useCallback(()=>{
     console.log("Hi there")
   },[])
+
+  
   return (
     <div>
       <ButtonComponent inputFunction={inputFunction}/>

@@ -12,8 +12,6 @@ function MemoTest() {
   )
 }
 
-
-
 const ButtonComponent=memo(()=>{
   console.log("Button Component rerenderdd")
 

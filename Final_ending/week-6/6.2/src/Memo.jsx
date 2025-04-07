@@ -33,7 +33,7 @@ function Memo() {
         type="text"
         name=""
         id=""
-        placeholder="Enter a text"
+        placeholder="Enter a number"
         onChange={(e) => {
           setNumber(e.target.value);
         }}

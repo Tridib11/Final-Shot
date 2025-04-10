@@ -6,8 +6,10 @@ import UseMemo from './UseMemo.jsx'
 import Memo from './Memo.jsx'
 import Callback from './Callback.jsx'
 import { Assignment2 } from './Assignment2.jsx'
+import AssignmentCallback from './AssignmentCallback.jsx'
 
 createRoot(document.getElementById('root')).render(
   // <Callback/>
-  <Assignment2/>
+  // <Assignment2/>
+  <AssignmentCallback/>
 )

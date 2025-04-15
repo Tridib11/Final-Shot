@@ -9,8 +9,7 @@ function Context() {
       <CountContext.Provider value={{ count, setCount }}>
         <Display/>
         <Button/>
-      </CountContext.Provider>
-      
+      </CountContext.Provider>      
     </div>
   )
 }

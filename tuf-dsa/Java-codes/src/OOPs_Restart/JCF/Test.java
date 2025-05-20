@@ -35,6 +35,58 @@ public class Test {
 //        System.out.println(ll.removeLast());
 //        System.out.println(ll);
 
+
+//        //LIFO
+//        Stack<Integer> st=new Stack<>();
+//        st.push(2);
+//        st.push(4);
+//        st.push(6);
+//        System.out.println(st);
+//        System.out.println(st.peek());
+//        st.pop();
+//        System.out.println(st);
+//        System.out.println(st.isEmpty());
+
+
+//        HashSet<Integer>set=new HashSet<>();
+//        set.add(1);
+//        set.add(2);
+//        set.add(3);
+//        set.add(0);
+//        System.out.println(set);
+//        set.remove(3);
+//        for(int num:set){
+//            System.out.println(num);
+//        }
+
+//        TreeSet<Integer> set=new TreeSet<>();
+//        set.add(1);
+//        set.add(2);
+//        set.add(3);
+//        set.add(-1);
+//        set.add(0);
+//
+//        System.out.println(set);
+
+//        System.out.println(set.floor(4)); <=4
+//        System.out.println(set.ceiling(2)); >=2
+
+
+        ArrayDeque<Integer> ad=new ArrayDeque<>();
+        //offer - > add
+        //FIFO
+
+        ad.offer(1);
+        ad.offer(2);
+        ad.offer(3);
+        System.out.println(ad);
+        System.out.println(ad.peek());
+
+
+
+
+
+
     }
 
 }

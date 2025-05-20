@@ -79,8 +79,14 @@ public class Test {
         ad.offer(1);
         ad.offer(2);
         ad.offer(3);
+        ad.offer(5);
+        ad.offer(6);
         System.out.println(ad);
+        //poll -> remove
+        ad.poll();
         System.out.println(ad.peek());
+
+        System.out.println(ad);
 
 
 

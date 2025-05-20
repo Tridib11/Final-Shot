@@ -72,21 +72,35 @@ public class Test {
 //        System.out.println(set.ceiling(2)); >=2
 
 
-        ArrayDeque<Integer> ad=new ArrayDeque<>();
-        //offer - > add
-        //FIFO
+//        ArrayDeque<Integer> ad=new ArrayDeque<>();
+//        //offer - > add
+//        //FIFO
+//
+//        ad.offer(1);
+//        ad.offer(2);
+//        ad.offer(3);
+//        ad.offer(5);
+//        ad.offer(6);
+//        System.out.println(ad);
+//        //poll -> remove
+//        ad.poll();
+//        System.out.println(ad.peek());
+//
+//        System.out.println(ad);
 
-        ad.offer(1);
-        ad.offer(2);
-        ad.offer(3);
-        ad.offer(5);
-        ad.offer(6);
-        System.out.println(ad);
-        //poll -> remove
-        ad.poll();
-        System.out.println(ad.peek());
 
-        System.out.println(ad);
+        PriorityQueue<Integer> pq=new PriorityQueue<>();
+
+        /*
+        * stores element and whenever you ask for a peek ,it gives you the
+        * smallest element
+        * */
+        pq.offer(1);
+        pq.offer(0);
+        pq.offer(5);
+        pq.offer(4);
+        System.out.println(pq);
+        System.out.println(pq.peek());
 
 
 

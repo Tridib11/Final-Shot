@@ -99,8 +99,19 @@ public class Test {
         pq.offer(0);
         pq.offer(5);
         pq.offer(4);
-        System.out.println(pq);
-        System.out.println(pq.peek());
+//        System.out.println(pq);
+//        System.out.println(pq.peek());
+//        pq.poll();
+//        System.out.println(pq.peek());
+//        pq.poll();
+//        System.out.println(pq);
+//        pq.poll();
+//        System.out.println(pq);
+
+//        while(pq.isEmpty()==false){
+//            System.out.println(pq.peek());
+//            pq.poll();
+//        }
 
 
 
